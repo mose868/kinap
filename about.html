@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ajira Digital KNAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url('images/background.jpeg') no-repeat center center/cover;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1, header h2 {
+            color: white;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            animation: floatText 3s infinite ease-in-out alternate;
+        }
+        @keyframes floatText {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #d32f2f;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo img {
+            width: 120px;
+            margin-right: 20px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: yellow;
+        }
+        .nav-right {
+            margin-left: auto;
+            position: relative;
+        }
+        .btn {
+            text-decoration: none;
+            background: green;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 128, 0, 0.3);
+            animation: floatButton 2s infinite ease-in-out alternate;
+        }
+        .btn:hover {
+            background: red;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+        }
+        @keyframes floatButton {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+        .about-section {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        h1, h2, h3 {
+            color: #008000;
+        }
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        .social a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Karibu Ajira</h1>
+        <h2>Empowering Youth through Digital Skills</h2>
+    </header>
+
+    <nav>
+        <div class="logo"><img src="logo.png" alt="Ajira Logo"></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="impact.html">Impact Stories</a></li>
+            <li><a href="https://ajiradigital.go.ke" target="_blank">Ajira Portal</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="signup.html" class="btn">Sign Up</a>
+            <a href="login.html" class="btn">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="about-section">
+            <h1>About Ajira Digital - Kiambu National Polytechnic</h1>
+            <p>Ajira Digital at Kiambu National Polytechnic is a youth empowerment program dedicated to equipping students and young professionals with essential digital skills for success in the global online job market.</p>
+
+            <h2>Our Mission</h2>
+            <p>We aim to bridge the gap between education and employment by providing hands-on training in high-demand digital skills. Our mission is to empower youth to create sustainable income streams through online freelancing opportunities.</p>
+
+            <h2>Meet Our Trainers</h2>
+
+            <h3>Valentine - Lead Trainer</h3>
+            <p>Valentine has been a pillar of support for Ajira trainees. She has guided students through the freelancing journey, ensuring they gain practical knowledge in content writing, data entry, transcription, and e-commerce. Her commitment to students' success has made her an invaluable part of our program.</p>
+
+            <h3>Moses Kimani - Evergreen Trainer</h3>
+            <p>Moses Kimani is a seasoned expert in Financial Markets and Trading, specializing in forex trading and online work. With vast experience in guiding students toward profitable trading strategies, Moses has helped over 500 youth enter the forex market with confidence.</p>
+
+            <h2>Why Choose Ajira Digital at KNAP?</h2>
+            <ul>
+                <li>Practical, hands-on training for the digital job market.</li>
+                <li>Mentorship from experienced freelancers and industry professionals.</li>
+                <li>A strong community of digital entrepreneurs and online workers.</li>
+                <li>Access to global freelancing platforms for remote work opportunities.</li>
+                <li>A chance to achieve financial independence through online work.</li>
+            </ul>
+
+            <h2>Join Us Today!</h2>
+            <p>If you're ready to start your freelancing journey, join Ajira Digital at Kiambu National Polytechnic today.</p>
+
+            <div class="image-placeholder">
+                <img src="images/group.jpeg" alt="Patron and Club Members" style="width: 50%; max-width: 200px; display: block; margin: auto; border-radius: 10px;">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Ajira Digital - Kiambu National Polytechnic. All Rights Reserved.</p>
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>

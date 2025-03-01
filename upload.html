@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Media | Ajira KNP</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #d40000, #008000);
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            background: black;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d40000;
+        }
+
+        /* Upload Section */
+        .upload-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #008000;
+            text-align: center;
+        }
+
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 100%;
+            background: white;
+            color: black;
+        }
+
+        button {
+            background: #d40000;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #008000;
+        }
+
+        /* Preview Section */
+        .preview {
+            margin-top: 20px;
+        }
+
+        .preview img, .preview video {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #d40000;
+            padding: 10px;
+            font-size: 16px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Upload Media</header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="impact.html">Impact Stories</a></li>
+            <li><a href="gaming.html">Gaming & Meetings</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="upload.html" class="active">Upload</a></li>
+        </ul>
+    </nav>
+
+    <section class="upload-container">
+        <h2>Upload Your Pictures & Videos</h2>
+        <p>Share your moments with us by uploading pictures, videos, or any file!</p>
+
+        <form class="upload-form">
+            <input type="file" id="fileInput" accept="image/*, video/*">
+            <button type="button" onclick="previewFile()">Preview</button>
+        </form>
+
+        <div class="preview">
+            <h3>Preview</h3>
+            <img id="imagePreview">
+            <video id="videoPreview" controls></video>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Ajira Kiambu National Polytechnic | All rights reserved.
+    </footer>
+
+    <script>
+        function previewFile() {
+            const fileInput = document.getElementById("fileInput");
+            const imagePreview = document.getElementById("imagePreview");
+            const videoPreview = document.getElementById("videoPreview");
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const fileType = file.type;
+
+                if (fileType.startsWith("image/")) {
+                    imagePreview.src = URL.createObjectURL(file);
+                    imagePreview.style.display = "block";
+                    videoPreview.style.display = "none";
+                } else if (fileType.startsWith("video/")) {
+                    videoPreview.src = URL.createObjectURL(file);
+                    videoPreview.style.display = "block";
+                    imagePreview.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

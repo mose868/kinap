@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajira Digital - FAQ</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: black;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        /* Floating FAQ Button */
+        .faq-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 999;
+            animation: floatUpDown 2s infinite ease-in-out;
+        }
+
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .faq-float:hover {
+            background-color: darkred;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .faq-container h2 {
+            color: green;
+        }
+
+        .faq-search {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid red;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border-left: 5px solid red;
+            margin-top: 5px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            font-size: 16px;
+            color: black;
+            background-color: white;
+        }
+
+        /* Feedback & Suggestions */
+        .suggestion-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: red;
+            border-radius: 5px;
+        }
+
+        .suggestion-container h3 {
+            color: white;
+        }
+
+        .suggestion-container textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .suggestion-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* Live Chat Button */
+        .live-chat {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            font-size: 18px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .live-chat:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="training.html">Training</a>
+        <a href="impact.html">Impact Stories</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <a href="#faq-section" class="faq-float">?</a>
+
+    <div id="faq-section" class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <input type="text" class="faq-search" id="faq-search" placeholder="Search for a question...">
+
+        <div class="faq-question">1. What is Ajira Digital?</div>
+        <div class="faq-answer">Ajira Digital is a program that helps youth gain digital skills and online job opportunities.</div>
+
+        <div class="faq-question">2. How can I join Ajira?</div>
+        <div class="faq-answer">You can join Ajira Digital by signing up on the official website and attending training sessions.</div>
+
+        <div class="faq-question">3. How do I get paid for online work?</div>
+        <div class="faq-answer">You can receive payments through PayPal, Payoneer, or direct bank transfers.</div>
+
+        <div class="suggestion-container">
+            <h3>Have a question or suggestion?</h3>
+            <textarea id="suggestion-input" rows="4" placeholder="Type your question or suggestion here..."></textarea>
+            <button id="submit-suggestion">Submit</button>
+        </div>
+
+        <a href="https://wa.me/yourwhatsappnumber" class="live-chat">Chat with Support</a>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = (answer.style.display === "block") ? "none" : "block";
+            });
+        });
+
+        document.getElementById('faq-search').addEventListener('input', function() {
+            let searchQuery = this.value.toLowerCase();
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.style.display = item.textContent.toLowerCase().includes(searchQuery) ? "block" : "none";
+            });
+        });
+
+        document.getElementById('submit-suggestion').addEventListener('click', function() {
+            let suggestion = document.getElementById('suggestion-input').value.trim();
+            if (suggestion) {
+                alert('Thank you for your suggestion: ' + suggestion);
+                document.getElementById('suggestion-input').value = '';
+            } else {
+                alert('Please enter a suggestion before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>
