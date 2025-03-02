@@ -39,4 +39,26 @@
     height: 400px; /* Adjust height as needed */
     overflow: hidden;
 }
+/* Mobile-friendly navigation */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+        display: none; /* Initially hidden */
+    }
+    nav ul.show {
+        display: flex; /* Show when menu button is clicked */
+    }
+    .nav-right {
+        flex-direction: column;
+    }
+    .hero {
+        font-size: 18px;
+        padding: 50px 10px;
+    }
+}
+
 
